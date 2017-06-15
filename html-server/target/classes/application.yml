@@ -1,0 +1,31 @@
+# server config start
+server:
+  port: 8090
+# server config end
+
+# eureka config start
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+    # 不用注册到eureka
+    register-with-eureka: false
+    # 从eureka拉取服务信息
+    fetch-registry: true
+# eureka config end
+
+# thymeleaf config start
+spring:
+  thymeleaf:
+    # 禁用缓存
+    cache: false
+    # 页面属性
+    mode: HTML5
+    # 编码设置
+    encoding: utf-8
+    # 响应内容
+    content-type: text/html
+  output:
+    ansi:
+      enabled: always
+# thymeleaf config end

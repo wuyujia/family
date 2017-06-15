@@ -1,0 +1,11 @@
+# 配置服务端口
+server:
+  port: 8000
+
+# 这是eureka单节点配置, 所以需要禁用自身注册服务
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

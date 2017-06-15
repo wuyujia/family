@@ -1,0 +1,36 @@
+# 获取全局配置的名称空间
+spring:
+  application:
+    name: didispace
+  # 获取注册中心的配置
+  cloud:
+    config:
+      discovery:
+        # 服务发现是否可用
+        enabled: true
+        # 配置服务的ID, 也就是配置的名称
+        service-id: config-server
+      # 激活的配置
+      profile: defualt
+  # 配置日志颜色
+  output:
+    ansi:
+      enabled: always
+
+# 客户端port配置
+server:
+  port: 8020
+
+# eureka 地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+# 关闭security校验
+management:
+  security:
+    enabled: false
+#security:
+#  basic:
+#    enabled: false

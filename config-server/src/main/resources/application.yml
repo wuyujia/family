@@ -1,0 +1,29 @@
+# 配置服务端口
+server:
+  port: 8010
+
+# 配置注册的服务名称
+spring:
+  application:
+    name: config-server
+  # 配置本地配置
+  profiles:
+    active: native
+  # 配置日志颜色
+  output:
+    ansi:
+      enabled: always
+
+# 这是eureka单节点配置, 所以需要禁用自身注册服务
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+# spring security配置
+management:
+  security:
+    enabled: false
+
